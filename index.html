@@ -8022,9 +8022,12 @@
             const change = data ? `${isUp ? '▲' : (isDown ? '▼' : '－')}${isUp ? '+' : ''}${data.change.toFixed(2)}` : '---';
             const changePercent = data ? `(${isUp ? '+' : ''}${data.changePercent.toFixed(2)}%)` : '';
             const prevClose = data ? data.prevClose.toFixed(2) : '---';
-            const high = data ? data.high.toFixed(2) : '---';
-            const low = data ? data.low.toFixed(2) : '---';
+            const open = data && data.open ? data.open.toFixed(2) : '---';
+            const high = data && data.high ? data.high.toFixed(2) : '---';
+            const low = data && data.low ? data.low.toFixed(2) : '---';
             const volume = data ? formatVolume(data.volume) : '---';
+            const limitUp = data && data.limitUp ? data.limitUp.toFixed(2) : '---';
+            const limitDown = data && data.limitDown ? data.limitDown.toFixed(2) : '---';
             const updateTime = data ? data.tradeTime : '--:--';
             const name = data ? data.name : stock.code;
             
@@ -8073,6 +8076,10 @@
                     </div>
                     <div class="monitor-details">
                         <div class="monitor-detail-item">
+                            <div>開盤</div>
+                            <div class="monitor-detail-value">${open}</div>
+                        </div>
+                        <div class="monitor-detail-item">
                             <div>最高</div>
                             <div class="monitor-detail-value" style="color: var(--accent-up);">${high}</div>
                         </div>
@@ -8083,6 +8090,16 @@
                         <div class="monitor-detail-item">
                             <div>成交量</div>
                             <div class="monitor-detail-value">${volume}</div>
+                        </div>
+                    </div>
+                    <div class="monitor-details" style="border-top: none; padding-top: 0;">
+                        <div class="monitor-detail-item">
+                            <div>🎯漲停</div>
+                            <div class="monitor-detail-value" style="color: var(--accent-up);">${limitUp}</div>
+                        </div>
+                        <div class="monitor-detail-item">
+                            <div>⬇️跌停</div>
+                            <div class="monitor-detail-value" style="color: var(--accent-down);">${limitDown}</div>
                         </div>
                     </div>
                     <div class="monitor-holding">

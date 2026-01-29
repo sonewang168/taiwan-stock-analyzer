@@ -2658,474 +2658,74 @@
             color: var(--accent-down) !important;
         }
 
-        /* ===== iPad 12.9吋 平板專用模式 ===== */
-        .tablet-mode .container {
-            max-width: 100%;
-            padding: 10px;
-        }
-
-        .tablet-mode .header {
-            padding: 10px 15px;
-            margin-bottom: 10px;
-        }
-
-        .tablet-mode .header h1 {
-            font-size: 1.3rem;
-        }
-
-        /* 平板模式隱藏其他區塊，只保留監控 */
-        .tablet-mode .search-section,
-        .tablet-mode .realtime-section,
-        .tablet-mode .heatmap-section,
-        .tablet-mode .etf-section,
-        .tablet-mode .watchlist-section,
-        .tablet-mode .ranking-section,
-        .tablet-mode .results-section,
-        .tablet-mode .ai-section {
-            display: none !important;
-        }
-
-        .tablet-mode .multi-monitor-section {
-            display: block !important;
-            margin: 0;
-            padding: 10px;
-            border-radius: 0;
-            height: calc(100vh - 80px);
-            overflow: hidden;
-        }
-
-        .tablet-mode .multi-monitor-header {
-            padding: 10px 0;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tablet-mode .multi-monitor-header h3 {
-            font-size: 1.1rem;
-        }
-
-        .tablet-mode .multi-monitor-controls {
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tablet-mode .multi-monitor-grid {
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 10px;
-            height: calc(100% - 70px);
-        }
-
-        .tablet-mode .monitor-card {
-            padding: 15px;
-            min-height: unset;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .tablet-mode .monitor-card-header {
-            margin-bottom: 8px;
-        }
-
-        .tablet-mode .monitor-stock-code {
-            font-size: 1.6rem;
-        }
-
-        .tablet-mode .monitor-stock-name {
-            font-size: 1.2rem;
-        }
-
-        .tablet-mode .monitor-market-tag {
-            font-size: 0.75rem;
-            padding: 3px 10px;
-        }
-
-        .tablet-mode .monitor-price-row {
-            margin-bottom: 8px;
-            flex: 1;
-            display: flex;
-            align-items: center;
-        }
-
-        .tablet-mode .monitor-price-row > div:first-child {
-            gap: 12px !important;
-        }
-
-        .tablet-mode .monitor-price-row > div:first-child > div:first-child {
-            /* 昨收 */
-        }
-
-        .tablet-mode .monitor-price-row > div:first-child > div:first-child > div:last-child {
-            font-size: 1.4rem !important;
-        }
-
-        .tablet-mode .monitor-current-price {
-            font-size: 2.8rem !important;
-        }
-
-        .tablet-mode .monitor-price-change {
-            font-size: 1.2rem;
-        }
-
-        .tablet-mode .monitor-details {
-            font-size: 0.95rem;
-            padding: 10px 0;
-            gap: 5px;
-        }
-
-        .tablet-mode .monitor-detail-item {
-            padding: 5px 10px;
-        }
-
-        .tablet-mode .monitor-detail-value {
-            font-size: 1.15rem;
-        }
-
-        .tablet-mode .monitor-holding {
-            padding: 8px 0;
-            gap: 10px;
-        }
-
-        .tablet-mode .monitor-holding input {
-            width: 95px !important;
-            font-size: 1rem;
-            padding: 10px 12px;
-        }
-
-        .tablet-mode .monitor-profit-value {
-            font-size: 1.25rem;
-        }
-
-        .tablet-mode .monitor-update-time {
-            font-size: 0.85rem;
-            margin-top: auto;
-        }
-
-        .tablet-mode .monitor-add-card {
-            min-height: unset;
-            height: 100%;
-            font-size: 1.2rem;
-        }
-
-        .tablet-mode .monitor-add-card .add-icon {
-            font-size: 4rem;
-        }
-
-        .tablet-mode .monitor-remove-btn {
-            font-size: 1.4rem;
-            padding: 5px 10px;
-        }
-
-        /* 平板模式切換按鈕 */
-        .tablet-mode-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--gradient-blue);
-            color: white;
-            border: none;
-            padding: 14px 22px;
-            border-radius: 30px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
-        }
-
-        .tablet-mode-toggle:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
-        }
-
-        .tablet-mode .tablet-mode-toggle {
-            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
-        }
-
-        /* 隱藏桌面模式的header */
-        .tablet-mode .header {
-            display: none;
-        }
-
-        /* iPad 12.9" 橫向自動偵測 (1024px ~ 1400px) */
-        @media screen and (min-width: 1024px) and (max-width: 1400px) and (min-height: 700px) and (orientation: landscape) {
-            .auto-tablet .container {
-                max-width: 100%;
-                padding: 10px;
+        /* ===== 抓取中霓虹閃爍效果 ===== */
+        @keyframes neonPulse {
+            0% {
+                box-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6, 0 0 20px #3b82f6;
+                border-color: #3b82f6;
+            }
+            25% {
+                box-shadow: 0 0 5px #8b5cf6, 0 0 10px #8b5cf6, 0 0 20px #8b5cf6, 0 0 30px #8b5cf6;
+                border-color: #8b5cf6;
+            }
+            50% {
+                box-shadow: 0 0 5px #06b6d4, 0 0 10px #06b6d4, 0 0 20px #06b6d4, 0 0 40px #06b6d4;
+                border-color: #06b6d4;
+            }
+            75% {
+                box-shadow: 0 0 5px #f59e0b, 0 0 10px #f59e0b, 0 0 20px #f59e0b, 0 0 30px #f59e0b;
+                border-color: #f59e0b;
+            }
+            100% {
+                box-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6, 0 0 20px #3b82f6;
+                border-color: #3b82f6;
             }
         }
 
-        /* iPad 直向模式 */
-        @media screen and (max-width: 1024px) and (orientation: portrait) {
-            .tablet-mode .multi-monitor-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
-            }
-            
-            .tablet-mode .monitor-card {
-                padding: 12px;
-            }
-            
-            .tablet-mode .monitor-stock-code {
-                font-size: 1.4rem;
-            }
-            
-            .tablet-mode .monitor-current-price {
-                font-size: 2.2rem !important;
-            }
-            
-            .tablet-mode .monitor-holding input {
-                width: 80px !important;
-                padding: 8px 10px;
-            }
-        }
-
-        /* 小螢幕平板（如 iPad mini）*/
-        @media screen and (max-width: 850px) {
-            .tablet-mode .multi-monitor-grid {
-                grid-template-columns: 1fr;
-                grid-template-rows: unset;
-                overflow-y: auto;
-                height: calc(100% - 70px);
-            }
-            
-            .tablet-mode .monitor-card {
-                min-height: 200px;
-                height: auto;
-            }
-        }
-
-        /* ===== iPad 12.9吋專用模式 ===== */
-        body.ipad-mode {
-            font-size: 18px;
-        }
-
-        body.ipad-mode .container {
-            max-width: 100%;
-            padding: 15px;
-        }
-
-        body.ipad-mode .header h1 {
-            font-size: 1.8rem;
-        }
-
-        /* iPad模式 - 搜尋區塊 */
-        body.ipad-mode .search-section {
-            flex-wrap: wrap;
-            gap: 15px;
-            padding: 20px;
-        }
-
-        body.ipad-mode .search-section input,
-        body.ipad-mode .search-section select,
-        body.ipad-mode .search-section button {
-            font-size: 1.1rem;
-            padding: 15px 20px;
-            min-height: 50px;
-        }
-
-        body.ipad-mode .market-btn {
-            padding: 15px 25px;
-            font-size: 1.1rem;
-        }
-
-        /* iPad模式 - 即時報價區塊 */
-        body.ipad-mode .realtime-section {
-            padding: 25px;
-        }
-
-        body.ipad-mode .realtime-stock-code {
-            font-size: 2.5rem;
-        }
-
-        body.ipad-mode .realtime-stock-name {
-            font-size: 2rem;
-        }
-
-        body.ipad-mode .realtime-current-price {
-            font-size: 5rem;
-        }
-
-        body.ipad-mode .realtime-price-change {
-            font-size: 1.8rem;
-        }
-
-        body.ipad-mode .realtime-detail-item {
-            padding: 20px;
-        }
-
-        body.ipad-mode .realtime-detail-value {
-            font-size: 1.5rem;
-        }
-
-        /* iPad模式 - 多股監控 4宮格優化 */
-        body.ipad-mode .multi-monitor-section {
-            padding: 20px;
-        }
-
-        body.ipad-mode .multi-monitor-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        body.ipad-mode .monitor-card {
-            padding: 20px;
-            min-height: 280px;
-        }
-
-        body.ipad-mode .monitor-stock-code {
-            font-size: 1.8rem;
-        }
-
-        body.ipad-mode .monitor-stock-name {
-            font-size: 1.4rem;
-        }
-
-        body.ipad-mode .monitor-current-price {
-            font-size: 2.8rem !important;
-        }
-
-        body.ipad-mode .monitor-price-change {
-            font-size: 1.3rem;
-        }
-
-        body.ipad-mode .monitor-details {
-            font-size: 1rem;
-            padding: 12px 0;
-        }
-
-        body.ipad-mode .monitor-detail-value {
-            font-size: 1.2rem;
-        }
-
-        body.ipad-mode .monitor-holding {
-            gap: 12px;
-            padding: 10px 0;
-        }
-
-        body.ipad-mode .monitor-holding input {
-            font-size: 1.1rem;
-            padding: 12px 15px;
-            width: 110px !important;
-        }
-
-        body.ipad-mode .monitor-holding input[style*="width: 55px"] {
-            width: 70px !important;
-        }
-
-        body.ipad-mode .monitor-profit-value {
-            font-size: 1.3rem;
-        }
-
-        body.ipad-mode .monitor-add-card {
-            min-height: 280px;
-            font-size: 1.2rem;
-        }
-
-        body.ipad-mode .monitor-add-card .add-icon {
-            font-size: 4rem;
-        }
-
-        /* iPad模式 - 按鈕觸控優化 */
-        body.ipad-mode .quick-btn,
-        body.ipad-mode button {
-            min-height: 48px;
-            min-width: 48px;
-            font-size: 1rem;
-        }
-
-        body.ipad-mode .monitor-remove-btn {
-            font-size: 1.5rem;
-            padding: 5px 10px;
-        }
-
-        /* iPad模式 - 五檔報價 */
-        body.ipad-mode .five-price-row {
-            font-size: 1.1rem;
-            padding: 10px 0;
-        }
-
-        /* iPad模式 - 隱藏非必要區塊 */
-        body.ipad-mode .heatmap-section,
-        body.ipad-mode .etf-section,
-        body.ipad-mode .watchlist-section,
-        body.ipad-mode .ranking-section {
-            display: none;
-        }
-
-        /* iPad模式切換按鈕 */
-        .ipad-mode-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 15px 25px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
-            z-index: 1000;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .ipad-mode-toggle:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(139, 92, 246, 0.5);
-        }
-
-        .ipad-mode-toggle.active {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
-        }
-
-        /* iPad模式 - 全螢幕監控 */
-        body.ipad-mode .header,
-        body.ipad-mode .search-section {
-            display: none;
-        }
-
-        body.ipad-mode .multi-monitor-section {
-            margin-top: 0;
-            border-radius: 0;
-            min-height: calc(100vh - 40px);
-        }
-
-        body.ipad-mode .multi-monitor-header {
-            position: sticky;
-            top: 0;
-            background: var(--bg-card);
-            padding: 15px 0;
+        .monitor-card.fetching {
+            animation: neonPulse 0.8s ease-in-out infinite;
+            border-width: 3px;
+            transform: scale(1.02);
             z-index: 10;
-            border-bottom: 1px solid var(--border-color);
+            position: relative;
         }
 
-        /* iPad橫向模式特別優化 */
-        @media screen and (min-width: 1024px) and (max-width: 1400px) and (min-height: 700px) {
-            body.ipad-mode .multi-monitor-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(2, 1fr);
-                height: calc(100vh - 180px);
-            }
+        .monitor-card.fetching::before {
+            content: '⏳ 抓取中...';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+            animation: pulse 0.5s ease-in-out infinite alternate;
+        }
 
-            body.ipad-mode .monitor-card,
-            body.ipad-mode .monitor-add-card {
-                height: 100%;
-                min-height: unset;
+        @keyframes pulse {
+            from { opacity: 0.8; }
+            to { opacity: 1; }
+        }
+
+        .monitor-card.fetch-done {
+            animation: fetchSuccess 0.5s ease-out;
+        }
+
+        @keyframes fetchSuccess {
+            0% {
+                box-shadow: 0 0 20px #10b981, 0 0 40px #10b981;
+                border-color: #10b981;
+            }
+            100% {
+                box-shadow: none;
+                border-color: var(--border-color);
             }
         }
+
     </style>
 </head>
 <body>
@@ -3325,6 +2925,7 @@
                         <button class="quick-btn" onclick="addMonitorStock()">➕ 新增</button>
                     </div>
                     <button class="quick-btn" style="background: var(--accent-blue);" onclick="refreshAllMonitorStaggered()">🔄 全部更新</button>
+                    <button class="quick-btn" style="background: var(--accent-purple);" onclick="testNeonEffect()" title="測試霓虹閃爍效果">✨ 測試效果</button>
                     <select id="monitorInterval" onchange="updateMonitorInterval()" style="padding: 6px 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary); color: var(--text-primary); font-size: 0.85rem;">
                         <option value="15">15秒</option>
                         <option value="30" selected>30秒</option>
@@ -8140,14 +7741,36 @@
             const stock = monitorStocks[index];
             if (!stock) return;
             
+            // 添加霓虹閃爍效果
+            const card = document.getElementById(`monitorCard${index}`);
+            if (card) {
+                card.classList.remove('fetch-done');
+                card.classList.add('fetching');
+            }
+            
             try {
                 const data = await fetchRealtimeQuoteDetail(stock.code, stock.market);
                 if (data && data.price > 0) {
                     monitorStocks[index].data = data;
                     renderMonitorCard(index);
+                    
+                    // 重新獲取卡片（因為renderMonitorCard會重建DOM）
+                    const newCard = document.getElementById(`monitorCard${index}`);
+                    if (newCard) {
+                        newCard.classList.add('fetch-done');
+                        // 移除完成動畫
+                        setTimeout(() => {
+                            newCard.classList.remove('fetch-done');
+                        }, 500);
+                    }
                 }
             } catch (e) {
                 console.error(`刷新 ${stock.code} 失敗:`, e);
+            }
+            
+            // 移除閃爍效果（如果卡片還存在）
+            if (card) {
+                card.classList.remove('fetching');
             }
         }
 
@@ -8199,6 +7822,47 @@
                 document.getElementById('monitorMarket').value = currentRealtimeMarket;
                 addMonitorStock();
             }
+        }
+
+        // 測試霓虹閃爍效果（休市時可用）
+        async function testNeonEffect() {
+            if (monitorStocks.length === 0) {
+                showToast('❌ 請先添加監控股票');
+                return;
+            }
+            
+            showToast('✨ 開始測試霓虹效果...');
+            
+            const statusEl = document.getElementById('monitorStatus');
+            const statusText = document.getElementById('monitorStatusText');
+            if (statusEl) statusEl.style.display = 'block';
+            
+            for (let i = 0; i < monitorStocks.length; i++) {
+                const card = document.getElementById(`monitorCard${i}`);
+                if (card) {
+                    // 顯示狀態
+                    if (statusText) {
+                        statusText.textContent = `✨ 測試效果 (${i + 1}/${monitorStocks.length}) ${monitorStocks[i].code}`;
+                    }
+                    
+                    // 添加霓虹效果
+                    card.classList.add('fetching');
+                    
+                    // 等待1.5秒模擬抓取時間
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    // 移除霓虹，添加完成效果
+                    card.classList.remove('fetching');
+                    card.classList.add('fetch-done');
+                    
+                    // 等待0.5秒後移除完成效果
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                    card.classList.remove('fetch-done');
+                }
+            }
+            
+            if (statusEl) statusEl.style.display = 'none';
+            showToast('✅ 測試完成！');
         }
 
         function loadHeatmapData() {
@@ -10966,64 +10630,10 @@ ${wavePrediction.substring(0, 200)}
             document.getElementById('aiWaveFinalLightSummary').textContent = lightSummary;
         }
 
-        // ===== iPad 平板專用模式 =====
-        let isTabletMode = false;
-
-        // 切換平板模式
-        function toggleTabletMode() {
-            isTabletMode = !isTabletMode;
-            document.body.classList.toggle('tablet-mode', isTabletMode);
-            
-            const btn = document.getElementById('tabletModeBtn');
-            if (btn) {
-                btn.innerHTML = isTabletMode 
-                    ? '🖥️ 桌面模式' 
-                    : '📱 iPad模式';
-            }
-            
-            // 儲存設定
-            localStorage.setItem('tabletMode', isTabletMode ? 'true' : 'false');
-            
-            showToast(isTabletMode ? '📱 已切換為 iPad 平板模式' : '🖥️ 已切換為桌面模式');
-        }
-
-        // 載入平板模式設定
-        function loadTabletMode() {
-            const saved = localStorage.getItem('tabletMode');
-            if (saved === 'true') {
-                isTabletMode = true;
-                document.body.classList.add('tablet-mode');
-                const btn = document.getElementById('tabletModeBtn');
-                if (btn) {
-                    btn.innerHTML = '🖥️ 桌面模式';
-                }
-            }
-        }
-
-        // 自動偵測 iPad
-        function detectiPad() {
-            const isIPad = /iPad/.test(navigator.userAgent) || 
-                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-            const screenWidth = window.screen.width;
-            const screenHeight = window.screen.height;
-            
-            // 12.9" iPad Pro 解析度約 1024x1366 或 2048x2732
-            if (isIPad || (screenWidth >= 1024 && screenWidth <= 1400 && screenHeight >= 700)) {
-                document.body.classList.add('auto-tablet');
-            }
-        }
-
         // 頁面載入時載入 API 金鑰
         document.addEventListener('DOMContentLoaded', function() {
             loadApiKeys();
-            loadTabletMode();
-            detectiPad();
         });
     </script>
-
-    <!-- iPad 平板模式切換按鈕 -->
-    <button id="tabletModeBtn" class="tablet-mode-toggle" onclick="toggleTabletMode()">
-        📱 iPad模式
-    </button>
 </body>
 </html>
